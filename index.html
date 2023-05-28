@@ -11,6 +11,19 @@
         integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
 </head>
 
+<style>
+    @media (max-width: 1399px) {
+        #carouselExampleDark_row {
+            flex-direction: column;
+        }
+
+        .row.vertical .carousel,
+        .row.vertical .col-sm {
+            width: 100%;
+        }
+    }
+</style>
+
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
@@ -38,7 +51,7 @@
                         <a class="nav-link fs-5" data-bs-toggle="modal" data-bs-target="#exampleModal"
                             data-bs-whatever="@mdo" style="cursor: pointer;">Login</a>
                     </li>
-                </ul>        
+                </ul>
             </div>
         </div>
     </nav>
@@ -79,7 +92,7 @@
                             <br>
                             <ul class="d-flex flex-column align-items-center m-0 p-0">
                                 <p class="card-text me-2">Don't have an account yet?</p>
-                                
+
                                 <a href="#">Go to Registration</a>
                             </ul>
                         </div>
@@ -93,8 +106,8 @@
         </div>
     </div>
     <div class="container mt-5">
-        <div class="row d-flex flex-row justify-content-center">
-            <div id="carouselExampleDark" class="carousel carousel-dark slide col-sm">
+        <div class="row d-flex justify-content-center" id="carouselExampleDark_row">
+            <div id="carouselExampleDark" class="carousel carousel-dark slide col-sm w-100">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
                         aria-current="true" aria-label="Slide 1"></button>
@@ -168,6 +181,7 @@
             </div>
         </div>
 
+
         <hr size="8px" class="mt-5" width="100%">
 
         <div class="container d-flex flex-column align-items-center">
@@ -208,17 +222,8 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">AI Drawing</h5>
-                            <p class="card-text">Whether it's illustration, graphic design, or animation effects, our AI drawing service will bring you the convenience and efficiency of your creation.
-                            </p>
-                            <a href="#" class="btn btn-primary">Learn more</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-5 m-1">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Suite Modules</h5>
-                            <p class="card-text">Whether you are a professional designer or a beginner, our drawing kit can meet your needs and give you a better experience in the creative process.
+                            <p class="card-text">Whether it's illustration, graphic design, or animation effects, our AI
+                                drawing service will bring you the convenience and efficiency of your creation.
                             </p>
                             <a href="#" class="btn btn-primary">Learn more</a>
                         </div>
@@ -228,7 +233,8 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">AI Detection</h5>
-                            <p class="card-text">Our inspection service is not only able to detect AI paintings, but also provides detailed analysis reports explaining the reasons and basis for its inspection results.
+                            <p class="card-text">Our inspection service not only detects AI paintings, but also provides
+                                detailed analysis reports explaining the reasons and basis for the results.
 
 
                             </p>
@@ -239,8 +245,21 @@
                 <div class="col-sm-5 m-1">
                     <div class="card">
                         <div class="card-body">
+                            <h5 class="card-title">Suite Modules</h5>
+                            <p class="card-text">Whether you are a professional designer or a beginner, our drawing kit
+                                can meet your needs and give you a better experience in the creative process.
+                            </p>
+                            <a href="#" class="btn btn-primary">Learn more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-5 m-1">
+                    <div class="card">
+                        <div class="card-body">
                             <h5 class="card-title">Course Videos</h5>
-                            <p class="card-text">In order to make you better use our services, we provide detailed instructional videos to help you get up to speed and master the relevant technology quickly.
+                            <p class="card-text">In order to make you better use our services, we provide detailed
+                                instructional videos to help you get up to speed and master the relevant technology
+                                quickly.
                             </p>
                             <a href="#" class="btn btn-primary">Learn more</a>
                         </div>
@@ -318,13 +337,13 @@
                 Thank you for your interest in our services! Here are our purchase options:
             </ul>
             <ul class="ps-0">
-                Monthly Plan: For only $3 per month, you can enjoy our comprehensive AI painting detection service. This
+                Monthly Plan: For only $6 per month, you can enjoy our comprehensive AI painting detection service. This
                 plan is ideal for those who are short-term users or want to experiment with our services. You can choose
                 whether or not to continue using it at any time according to your needs.
             </ul>
             <ul class="mb-4 ps-0">
                 Annual Plan: Choose our annual plan and you'll enjoy our services for an entire year at a special price
-                of just $30. This solution is designed for long-term users of our service, not only to save money, but
+                of just $60. This solution is designed for long-term users of our service, not only to save money, but
                 also to continue to use our AI painting detection service and enjoy continuous support.
             </ul>
 
@@ -332,12 +351,12 @@
                 <div class="row w-100">
                     <div class="col-6 text-center border-end d-flex flex-column justify-content-evenly">
                         <h1>1 Month</h1>
-                        <h3>$3.00 / high quality plan</h3>
+                        <h3>$6.00 / high quality plan</h3>
                         <button type="button" class="btn btn-outline-primary">Go To Purchases</button>
                     </div>
                     <div class="col-6 text-center d-flex flex-column justify-content-evenly">
                         <h1>12 Months</h1>
-                        <h3>$30.00/concession plan</h3>
+                        <h3>$60.00/concession plan</h3>
                         <button type="button" class="btn btn-outline-primary">Go To Purchases</button>
                     </div>
                 </div>

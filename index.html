@@ -23,7 +23,7 @@
         }
     }
 
-    #one_month{
+    #one_month {
         border-right: 1px solid #f1f1f1;
     }
 
@@ -34,13 +34,13 @@
             align-items: center;
             justify-content: center;
         }
-        
-        #one_month{
+
+        #one_month {
             width: 100%;
             border: none;
         }
 
-        #twelve_month{
+        #twelve_month {
             width: 100%;
             margin: 1.5rem;
         }
@@ -351,46 +351,8 @@
             </div>
         </div>
 
-        <div class="p-5 mt-5">
-            <h1 class="text-center mb-3" id="purchase">Purchase Plan</h1>
+        <div id="purchase_container">
 
-            <ul class="text-center ps-0">
-                Thank you for your interest in our services! Here are our purchase options:
-            </ul>
-            <ul class="ps-0">
-                Monthly Plan: For only $6 per month, you can enjoy our comprehensive AI painting detection service. This
-                plan is ideal for those who are short-term users or want to experiment with our services. You can choose
-                whether or not to continue using it at any time according to your needs.
-            </ul>
-            <ul class="mb-4 ps-0">
-                Annual Plan: Choose our annual plan and you'll enjoy our services for an entire year at a special price
-                of just $60. This solution is designed for long-term users of our service, not only to save money, but
-                also to continue to use our AI painting detection service and enjoy continuous support.
-            </ul>
-
-            <div>
-                <div class="row w-100 mb-5" id="purchase_plan_id">
-                    <div class="col-6 text-center d-flex flex-column justify-content-evenly" id="one_month">
-                        <h1 class="m-4">1 Month</h1>
-                        <h3 class="m-4">$6.00 / high quality plan</h3>
-                        <button type="button" class="btn btn-outline-primary">Go To Purchases</button>
-                    </div>
-                    <div class="col-6 text-center d-flex flex-column justify-content-evenly" id="twelve_month">
-                        <h1 class="m-4">12 Months</h1>
-                        <h3 class="m-4">$60.00/concession plan</h3>
-                        <button type="button" class="btn btn-outline-primary">Go To Purchases</button>
-                    </div>
-                </div>
-            </div>
-            <ul class="text-center mt-4 ps-0">
-                No matter which solution you choose, we guarantee high-quality, accurate and reliable AI painting
-                detection services. Our goal is to make your art creation and collecting more confident and interesting.
-            </ul>
-            <ul class="text-center ps-0">
-                If you have any questions or need further information, please do not hesitate to contact us. We look
-                forward to providing you with the best quality service and exploring the wonderful world of AI painting
-                with you!
-            </ul>
         </div>
     </div>
 
@@ -431,6 +393,87 @@
         <!-- Copyright -->
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.slim.min.js"
+        integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
+    <script>
+        let perchase_bool = true
+        let perchase_private = {
+            "user": "Individual",
+            "button_name": "Teams",
+            "bool":false,
+            "one": 6,
+            "twelve": 66,
+        }
+        let team_private = {
+            "user": "Team",
+            "button_name": "Individual",
+            bool:true,
+            "one": 25,
+            "twelve": 250,
+        }
+
+        function perchase_fun(bool) {
+            $("#purchase_container").empty("")
+            perchase_bool = bool
+
+            if (perchase_bool) {
+                data = perchase_private
+            } else {
+                data = team_private
+            }
+
+            let perchase_code = `
+            <div class="p-5 mt-5">
+                <h1 class="text-center mb-3" id="purchase">${data.user} Purchase Plan</h1>
+                <div class="w-100 d-flex justify-content-center align-items-center">
+                    <button type="button" class="w-10 btn btn-outline-primary" onclick="perchase_fun(${data.bool})">Go to ${data.button_name} scenarios</button>
+                </div>
+
+                <ul class="text-center ps-0">
+                    Thank you for your interest in our services! Here are our purchase options:
+                </ul>
+                <ul class="ps-0">
+                    Monthly Plan: For only $${data.one} per month, you can enjoy our comprehensive AI painting detection service. This
+                    plan is ideal for those who are short-term users or want to experiment with our services. You can choose
+                    whether or not to continue using it at any time according to your needs.
+                </ul>
+                <ul class="mb-4 ps-0">
+                    Annual Plan: Choose our annual plan and you'll enjoy our services for an entire year at a special price
+                    of just $${data.twelve}. This solution is designed for long-term users of our service, not only to save money, but
+                    also to continue to use our AI painting detection service and enjoy continuous support.
+                </ul>
+
+                <div>
+                    <div class="row w-100 mb-5" id="purchase_plan_id">
+                        <div class="col-6 text-center d-flex flex-column justify-content-evenly" id="one_month">
+                            <h1 class="m-4">1 Month</h1>
+                            <h3 class="m-4">$${data.one}.00 / high quality plan</h3>
+                            <button type="button" class="btn btn-outline-primary">Go To Purchases</button>
+                        </div>
+                        <div class="col-6 text-center d-flex flex-column justify-content-evenly" id="twelve_month">
+                            <h1 class="m-4">12 Months</h1>
+                            <h3 class="m-4">$${data.twelve}.00/concession plan</h3>
+                            <button type="button" class="btn btn-outline-primary">Go To Purchases</button>
+                        </div>
+                    </div>
+                </div>
+                <ul class="text-center mt-4 ps-0">
+                    No matter which solution you choose, we guarantee high-quality, accurate and reliable AI painting
+                    detection services. Our goal is to make your art creation and collecting more confident and interesting.
+                </ul>
+                <ul class="text-center ps-0">
+                    If you have any questions or need further information, please do not hesitate to contact us. We look
+                    forward to providing you with the best quality service and exploring the wonderful world of AI painting
+                    with you!
+                </ul>
+            </div>
+        `
+
+            $("#purchase_container").append(perchase_code)
+        }
+
+        perchase_fun(true)
+    </script>
 </body>
 
 </html>
